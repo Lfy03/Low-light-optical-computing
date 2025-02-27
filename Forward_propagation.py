@@ -19,6 +19,9 @@ padding_size = (mask_size - image_size) // 2  # 0 padding size
 
 # 10000 input images, (num_images, 1, 28, 28)
 images = torch.rand((num_images, 1, image_size, image_size), device=device)
+data_dir = ""
+np.load(data_dir)
+torch.tensor()
 
 # 1 mask, (1, 1, 512, 512)
 mask = torch.rand((1, 1, mask_size, mask_size), device=device)
@@ -51,5 +54,5 @@ end_time = time.time()
 print(f"Processed {num_images} images in {end_time - start_time:.2f} seconds.")
 
 # 4. save result
-torch.save(outputs, "conv_results.pt")
+torch.save(outputs, "/mnt/d/Program/Python_Algorithm/Low-light-optical-computing/data/temp/conv_results.pt")
 print("Results saved to 'conv_results.pt'")
